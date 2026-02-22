@@ -1,0 +1,94 @@
+//
+//  ClassView_T3.swift
+//  dripApp
+//
+//  Created by Тимофей Фролов on 22.02.2026.
+//
+
+import SwiftUI
+import SchedHSE
+
+
+struct ClassViewT3: View {
+    
+    let classItem: ClassItem
+    @Binding var isExpanded: Bool
+    
+    var body: some View {
+        
+        HStack {
+            VStack(alignment: .leading) {
+                Text(classItem.discipline)
+                    .fontify(.classTitle)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(classItem.kindOfWork)
+                    .fontify(.classType)
+                
+                Spacer()
+                
+                if isExpanded {
+                    VStack(alignment: .leading) {
+                        ForEach(classItem.listOfLecturers) { i in
+                            LecturerView(lecturer: i)
+                        }
+                        Spacer()
+                    }
+                    .transition(.transify)
+                }
+                
+                Text(classItem.auditorium)
+                    .fontify(
+                        .roomNumber,
+                        color: Color(UIColor.secondarySystemBackground)
+                    )
+                    .cardView(
+                        style: .roomNumber,
+                        background: .primary
+                    )
+            }
+            
+            Spacer()
+            VStack(alignment: .trailing) {
+                if isExpanded {
+                    Text(String(classItem.lessonNumberStart))
+                        .fontify(.classTitle)
+                        .frame(width: 30, height: 30, alignment: .bottomLeading)
+                        .transition(.transify)
+                    Spacer()
+                }
+                
+                Text(classItem.beginLesson.timeHHmm)
+                    .fontify(.classTime)
+                    .padding(.trailing, 2)
+                    .padding(.vertical, 2)
+                
+                if !isExpanded { Spacer() }
+                
+                Text(classItem.endLesson.timeHHmm)
+                    .fontify(.classTime)
+                    .padding(.trailing, 2)
+                    .padding(.vertical, 2)
+            }
+        }
+        .cardView(style: .cardView)
+        .frame(minHeight: 150)
+        .padding(.horizontal)
+    }
+}
+
+#Preview {
+    ScrollView {
+        VStack(spacing: 10) {
+            ScheduleItemView(classList: [
+                MockData.classItem
+            ])
+            ScheduleItemView(classList: [
+                MockData.classItem,
+                MockData.classItem,
+                MockData.classItem
+            ])
+            
+        }
+    }
+    .preferredColorScheme(.light)
+}
