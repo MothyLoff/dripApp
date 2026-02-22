@@ -1,0 +1,15 @@
+{
+  "originHash" : "8864961b9c4d3c345075d542c8d6b20c50d777343946a7441c7e43f026370299",
+  "pins" : [
+    {
+      "identity" : "schedhse",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MothyLoff/SchedHSE",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a1bd179b560ebcea2e77eaf8c99938cc645817b3"
+      }
+    }
+  ],
+  "version" : 3
+}

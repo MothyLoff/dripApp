@@ -13,5 +13,8 @@ struct dripAppApp: App {
         WindowGroup {
             ContentView()
         }
+        #if os(macOS)
+        .defaultSize(width: 600, height: 900)
+        #endif
     }
 }

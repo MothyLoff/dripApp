@@ -5,11 +5,13 @@
 //  Created by Тимофей Фролов on 20.02.2026.
 //
 
+#if os(iOS)
 import SwiftUI
 
 class HapticsManager {
     
     static let instance: HapticsManager = .init()
+    
     
     func notification(type: UINotificationFeedbackGenerator.FeedbackType) {
         let generator = UINotificationFeedbackGenerator()
@@ -21,4 +23,4 @@ class HapticsManager {
         generator.impactOccurred()
     }
 }
-
+#endif

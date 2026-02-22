@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             ScrollView {
-                LazyVStack {
+                LazyVStack(spacing: 30) {
                     ForEach(self.scheduleModel.schedule) { i in
                         i.body
                     }

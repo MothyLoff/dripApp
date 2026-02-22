@@ -45,7 +45,10 @@ struct ClassView_01: View {
                 }
                 
                 Text(RoomNumber(classItem.auditorium).stringNumber)
-                    .fontify(.roomNumber, color: Color(UIColor.systemBackground))
+                    .fontify(
+                        .roomNumber,
+                        color: Color.systemBackground
+                    )
                     .cardView(style: .roomNumber, background: .primary)
                 
             }

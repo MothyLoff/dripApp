@@ -5,6 +5,7 @@
 //  Created by Тимофей Фролов on 20.02.2026.
 //
 
+#if os(iOS)
 import SwiftUI
 import SchedHSE
 import Foundation
@@ -87,3 +88,4 @@ struct HapticsManagerPreview: View {
         .preferredColorScheme(.dark)
 }
 
+#endif

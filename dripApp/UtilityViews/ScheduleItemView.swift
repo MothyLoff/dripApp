@@ -23,7 +23,9 @@ struct ScheduleItemView: View {
                 .onTapGesture {
                     withAnimation(.springify) {
                         self.isExpanded.toggle()
-                        HapticsManager.instance.impact(style: .soft)
+                        #if os(iOS)
+                            HapticsManager.instance.impact(style: .soft)
+                        #endif
                     }
                 }
         } else {
@@ -70,7 +72,9 @@ struct ScheduleItemView: View {
             .onTapGesture {
                 withAnimation(.springify) {
                     self.isExpanded.toggle()
-                    HapticsManager.instance.impact(style: .soft)
+                    #if os(iOS)
+                        HapticsManager.instance.impact(style: .soft)
+                    #endif
                 }
             }
         }

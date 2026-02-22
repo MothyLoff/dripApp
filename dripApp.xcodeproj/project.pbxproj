@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FE36C89E2F48B03D005A4FA8 /* SchedHSE in Frameworks */ = {isa = PBXBuildFile; productRef = FE36C89D2F48B03D005A4FA8 /* SchedHSE */; };
+		FEB3162D2F4B8AE3008B9610 /* SchedHSE in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3162C2F4B8AE3008B9610 /* SchedHSE */; };
+		FEB316332F4B9313008B9610 /* SchedHSE in Frameworks */ = {isa = PBXBuildFile; productRef = FEB316322F4B9313008B9610 /* SchedHSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE36C89E2F48B03D005A4FA8 /* SchedHSE in Frameworks */,
+				FEB3162D2F4B8AE3008B9610 /* SchedHSE in Frameworks */,
+				FEB316332F4B9313008B9610 /* SchedHSE in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +80,8 @@
 			name = dripApp;
 			packageProductDependencies = (
 				FE36C89D2F48B03D005A4FA8 /* SchedHSE */,
+				FEB3162C2F4B8AE3008B9610 /* SchedHSE */,
+				FEB316322F4B9313008B9610 /* SchedHSE */,
 			);
 			productName = dripApp;
 			productReference = FE0EE5C52F474E1E0025A006 /* dripApp.app */;
@@ -106,7 +112,7 @@
 			mainGroup = FE0EE5BC2F474E1D0025A006;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				FE36C89C2F48B03D005A4FA8 /* XCLocalSwiftPackageReference "../SchedHSEX" */,
+				FEB316312F4B9313008B9610 /* XCRemoteSwiftPackageReference "SchedHSE" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FE0EE5C62F474E1E0025A006 /* Products */;
@@ -268,6 +274,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZYDWYGXCMH;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -275,14 +284,21 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = timowaloff.dripApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -300,6 +316,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZYDWYGXCMH;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -307,14 +326,21 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = timowaloff.dripApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -347,16 +373,29 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		FE36C89C2F48B03D005A4FA8 /* XCLocalSwiftPackageReference "../SchedHSEX" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SchedHSEX;
+/* Begin XCRemoteSwiftPackageReference section */
+		FEB316312F4B9313008B9610 /* XCRemoteSwiftPackageReference "SchedHSE" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MothyLoff/SchedHSE";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		FE36C89D2F48B03D005A4FA8 /* SchedHSE */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = SchedHSE;
+		};
+		FEB3162C2F4B8AE3008B9610 /* SchedHSE */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SchedHSE;
+		};
+		FEB316322F4B9313008B9610 /* SchedHSE */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEB316312F4B9313008B9610 /* XCRemoteSwiftPackageReference "SchedHSE" */;
 			productName = SchedHSE;
 		};
 /* End XCSwiftPackageProductDependency section */

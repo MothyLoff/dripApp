@@ -39,7 +39,7 @@ struct ClassViewT3: View {
                 Text(classItem.auditorium)
                     .fontify(
                         .roomNumber,
-                        color: Color(UIColor.secondarySystemBackground)
+                        color: Color.secondarySystemBackground
                     )
                     .cardView(
                         style: .roomNumber,
