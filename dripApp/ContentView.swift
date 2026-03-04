@@ -12,12 +12,16 @@ struct ContentView: View {
     @ObservedObject var scheduleModel = ScheduleModel(groupList: TimaShed.groups)
     @State var isLoading: Bool = false
     
+    @State private var statusBarHeight: CGFloat = 0
+    
     var body: some View {
         ZStack {
-            ScrollView {
-                LazyVStack(spacing: 30) {
-                    ForEach(self.scheduleModel.schedule) { i in
-                        i.body
+            ZStack(alignment: .top) {
+                ScrollView {
+                    LazyVStack(spacing: 20, pinnedViews: [.sectionHeaders]) {
+                        ForEach(self.scheduleModel.schedule) { i in
+                            i.body
+                        }
                     }
                 }
             }
@@ -26,24 +30,36 @@ struct ContentView: View {
                     .fontify(.classTitle)
             }
         }
+        .background(
+            GeometryReader { geo in
+                Color.clear
+                    .onAppear {
+                        statusBarHeight = geo.safeAreaInsets.top / 20
+                    }
+            }
+            .ignoresSafeArea()
+        )
+        .safeAreaInset(edge: .top, spacing: 0) {
+            LinearGradient(
+                colors: [
+                    Color(.systemBackground),
+                    Color(.systemBackground).opacity(0)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+            .frame(height: statusBarHeight)
+        }
         .task {
-            withAnimation {
-                isLoading = true
-            }
+            isLoading = true
             let _ = await self.scheduleModel.update()
-            withAnimation {
-                isLoading = false
-            }
-
+            isLoading = false
         }
         .refreshable {
-            withAnimation {
-                isLoading = true
-            }
+            isLoading = true
             let _ = await self.scheduleModel.update()
-            withAnimation {
-                isLoading = false
-            }
+            isLoading = false
         }
     }
 }

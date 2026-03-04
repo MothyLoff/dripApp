@@ -20,7 +20,7 @@ extension View {
     
     func fontify(
         _ style: FontifyStyle = .classTitle,
-        color: Color = .primary,
+        color: Color? = nil,
         isExpanded: Bool = true
     ) -> some View {
         let size: CGFloat = switch style {
@@ -39,10 +39,14 @@ extension View {
             case .classTitle: 2
             case .classTime, .classTimeActive, .classType, .dayTitle, .roomNumber: 1
         }
+        let defaultColor: Color = switch style {
+            case .classTime, .classType: .secondary
+            default: .primary
+        }
         
         return self
             .lineLimit(lineLimit)
-            .foregroundColor(color)
+            .foregroundStyle(color ?? defaultColor)
             .font(
                 .system(size: size, weight: weight)
                 .width(isExpanded ? .expanded : .standard)

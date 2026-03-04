@@ -1,0 +1,39 @@
+{
+  "fill" : "system-light",
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "image-name" : "Frame 282 2.svg",
+          "name" : "Frame 282 2"
+        },
+        {
+          "image-name" : "Frame 281 2.svg",
+          "name" : "Frame 281 2"
+        },
+        {
+          "image-name" : "Frame 280 2.svg",
+          "name" : "Frame 280 2"
+        },
+        {
+          "image-name" : "Frame 279 2.svg",
+          "name" : "Frame 279 2"
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

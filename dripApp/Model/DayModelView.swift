@@ -40,13 +40,17 @@ struct DayModelView: View, Identifiable {
     
     // MARK: body --------
     var body: some View {
-        LazyVStack(alignment: .center, spacing: 10) {
+        Section {
+            VStack {
+                ForEach(self.filteredSchedule.indices, id: \.self) { index in
+                    let classPool: [ClassItem] = self.filteredSchedule[index]
+                    ScheduleItemView(classList: classPool)
+                }
+            }
+        } header: {
             Text(dateString)
                 .fontify(.dayTitle)
-            ForEach(self.filteredSchedule.indices, id: \.self) { index in
-                let classPool: [ClassItem] = self.filteredSchedule[index]
-                ScheduleItemView(classList: classPool)
-            }
+                //.blendMode(.difference)
         }
     }
     
@@ -98,16 +102,5 @@ struct DayModelView: View, Identifiable {
 
 
 #Preview {
-    ScrollView {
-        LazyVStack(spacing: 30) {
-            try! DayModelView(classList: [
-                MockData.classItem,
-                MockData.classItem
-            ])
-            try! DayModelView(classList: [
-                MockData.classItem1,
-                MockData.classItem2
-            ])
-        }
-    }
+    ContentView()
 }

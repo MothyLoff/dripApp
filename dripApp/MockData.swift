@@ -96,5 +96,55 @@ class MockData {
         lessonOid: 3
     )
     
+    static let classItemOBA = ClassItem(
+        tableofLessonsName: "1",
+        contentOfLoadFaculty: "---",
+        parentschedule: "---",
+        building: "---",
+        auditorium: "B214",
+        dayOfWeek: 7,
+        contentTableOfLessonsName: 3,
+        beginLesson: calendar.date(
+            from: DateComponents(calendar: calendar, year: 2026, month: 2, day: 21, hour: 13, minute: 00)
+        )!,
+        endLesson: calendar.date(
+            from: DateComponents(calendar: calendar, year: 2026, month: 2, day: 21, hour: 14, minute: 20)
+        )!,
+        lessonNumberEnd: 3,
+        lessonNumberStart: 3,
+        group: "---",
+        discipline: "⚫️ОБА",
+        kindOfWork: "Лекция",
+        listOfLecturers: [
+            MockData.lecturer
+        ],
+        lessonOid: 4
+    )
+    
+    static let classItemCalculus = ClassItem(
+        tableofLessonsName: "1",
+        contentOfLoadFaculty: "---",
+        parentschedule: "---",
+        building: "---",
+        auditorium: "R306",
+        dayOfWeek: 7,
+        contentTableOfLessonsName: 3,
+        beginLesson: calendar.date(
+            from: DateComponents(calendar: calendar, year: 2026, month: 2, day: 21, hour: 14, minute: 40)
+        )!,
+        endLesson: calendar.date(
+            from: DateComponents(calendar: calendar, year: 2026, month: 2, day: 21, hour: 16, minute: 00)
+        )!,
+        lessonNumberEnd: 3,
+        lessonNumberStart: 3,
+        group: "---",
+        discipline: "📌МатАн",
+        kindOfWork: "Лекция",
+        listOfLecturers: [
+            MockData.lecturer
+        ],
+        lessonOid: 4
+    )
+    
     
 }
